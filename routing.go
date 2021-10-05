@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-
 	"github.com/gorilla/mux"
 )
 
@@ -14,8 +13,8 @@ func main() {
 		vars := mux.Vars(r)
 		title := vars["title"]
 		page := vars["page"]
-
 		fmt.Fprintf(w, "You've requested the book: %s on page %s\n", title, page)
+		fmt.Fprintf(w, "This is the end oof method handleFunc\n")
 	})
 
 	http.ListenAndServe(":8090", r)
